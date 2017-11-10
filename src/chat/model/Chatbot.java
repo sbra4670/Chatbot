@@ -61,7 +61,16 @@ public class Chatbot
 	
 	public boolean lengthChecker(String input)
 	{
-		return false;
+		boolean validLength = false;
+		
+		if (input != null)
+		{
+			if (input.length() >2)
+			{
+				validLength = true;
+			}
+		}
+		return validLength;
 	}
 	
 	public boolean htmlTagChecker(String input)
@@ -101,6 +110,10 @@ public class Chatbot
 
 	public boolean quitChecker(String exitString)
 	{
+		if (exitString.equalsIgnoreCase("quit"))
+		{
+			return true;
+		}
 		return false;
 	}
 

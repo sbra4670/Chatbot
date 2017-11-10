@@ -20,7 +20,7 @@ public class PopupDisplay
 	
 	public PopupDisplay()
 	{
-		icon = new ImageIcon(getClass().getResource("images/Anonymous"))
+		icon = new ImageIcon(getClass().getResource("images/Anonymous.jpg"));
 	}
 	
 	
@@ -28,7 +28,7 @@ public class PopupDisplay
 	
 public void displayText(String textToDisplay)
 {
-	JOptionPane.showMessageDialog(null, message, windowTitle, JOptionPane.INFORMATION_MESSAGE, icon);
+	JOptionPane.showMessageDialog(null, textToDisplay, windowTitle, JOptionPane.INFORMATION_MESSAGE, icon);
 }
 
 /**
