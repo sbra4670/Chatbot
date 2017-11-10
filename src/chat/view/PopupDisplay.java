@@ -12,6 +12,7 @@ import javax.swing.ImageIcon;
 public class PopupDisplay
 {
 	private ImageIcon icon;
+	private String windowTitle;
 	/**
 	 * Displays a popup showing the supplied String to the user.
 	 * @param textToDisplay The text to be displayed.
@@ -19,7 +20,7 @@ public class PopupDisplay
 	
 	public PopupDisplay()
 	{
-		icon = new ImageIcon(getClass(). get)
+		icon = new ImageIcon(getClass().getResource("images/Anonymous"))
 	}
 	
 	
