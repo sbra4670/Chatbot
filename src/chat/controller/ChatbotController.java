@@ -2,6 +2,8 @@ package chat.controller;
 
 import  chat.view.PopupDisplay;
 import chat.model.Chatbot;
+import chat.view.ChatFrame;
+import java.util.List;
 
 public class ChatbotController
 {
@@ -12,6 +14,7 @@ public class ChatbotController
 	{
 		chatbot = new Chatbot("Chatbot");
 		display = new PopupDisplay();
+//		appFrame = new ChatFrame(this);
 		
 	}
 	
@@ -20,11 +23,11 @@ public class ChatbotController
 	{
 		String response = display.collectResponse("What do you want to talk about?");
 		
-		while (chatbot.lengthChecker(response) && !chatbot.quitChecker(response))
-		{
-			response = popupChat(response);
-			response = display.collectResponse(response);
-		}
+//		while (chatbot.lengthChecker(response) && !chatbot.quitChecker(response))
+//		{
+//			response = popupChat(response);
+//			response = display.collectResponse(response);
+//		}
 	}
 	
 	private String popupChat(String chat)
