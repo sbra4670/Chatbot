@@ -27,6 +27,8 @@ public ChatPanel(ChatbotController appController)
 	inputField = new JTextField(20);
 	appLayout = new SpringLayout();
 	
+	
+	
 	setupPanel();
 	setupLayout();
 	setupListeners();
@@ -44,7 +46,9 @@ this.add(chatArea);
 
 private void setupLayout()
 {
-	
+	appLayout.putConstraint(SpringLayout.NORTH, chatArea, 20, SpringLayout.NORTH, this);
+	appLayout.putConstraint(SpringLayout.WEST, chatArea, 25, SpringLayout.WEST, this);
+	appLayout.putConstraint(SpringLayout.EAST, chatArea, -25, SpringLayout.EAST, this);
 }
 
 private void setupListeners()
