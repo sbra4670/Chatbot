@@ -7,6 +7,8 @@ import javax.swing.SpringLayout;
 import javax.swing.JPanel;
 import chat.controller.ChatbotController;
 import java.awt.Color;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class ChatPanel extends JPanel
 {
@@ -23,9 +25,15 @@ public ChatPanel(ChatbotController appController)
 	this.appController = appController;
 	
 	chatButton = new JButton("chat");
+	chatButton.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent e) {
+		}
+	});
 	chatArea = new JTextArea(10, 25);
 	inputField = new JTextField(20);
 	appLayout = new SpringLayout();
+
+	
 	
 	
 	
@@ -49,6 +57,10 @@ private void setupLayout()
 	appLayout.putConstraint(SpringLayout.NORTH, chatArea, 20, SpringLayout.NORTH, this);
 	appLayout.putConstraint(SpringLayout.WEST, chatArea, 25, SpringLayout.WEST, this);
 	appLayout.putConstraint(SpringLayout.EAST, chatArea, -25, SpringLayout.EAST, this);
+	appLayout.putConstraint(SpringLayout.NORTH, chatButton, 28, SpringLayout.SOUTH, chatArea);
+	appLayout.putConstraint(SpringLayout.EAST, chatButton, -25, SpringLayout.EAST, this);
+	appLayout.putConstraint(SpringLayout.NORTH, inputField, 0, SpringLayout.NORTH, chatButton);
+	appLayout.putConstraint(SpringLayout.WEST, inputField, 0, SpringLayout.WEST, chatArea);
 }
 
 private void setupListeners()
