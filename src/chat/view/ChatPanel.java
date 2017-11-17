@@ -24,8 +24,7 @@ public ChatPanel(ChatbotController appController)
 {
 	super();
 	this.appController = appController;
-	
-	chatButton = new JButton("chat");
+
 	chatButton.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e)
 		{
@@ -35,9 +34,12 @@ public ChatPanel(ChatbotController appController)
 			inputField.setText("");
 		}
 	});
+	
+	chatButton = new JButton("chat");
 	chatArea = new JTextArea(10, 25);
 	inputField = new JTextField(20);
 	appLayout = new SpringLayout();
+	checkerButton = new JButton("Call Checkers");
 
 	setupPanel();
 	setupLayout();
