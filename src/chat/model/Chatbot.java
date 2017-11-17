@@ -33,12 +33,17 @@ public class Chatbot
 		this.followUps = new String [5];
 	}
 
-	private void buildMovieList()
+	private void buildVerbs()
 	{
 		verbs[0] = "like";
 		verbs[1] = "dislike";
 		verbs[2] = "am ambivalent about";
 		verbs[3] = "am thinking about";
+	}
+	
+	private void buildMoiveList()
+	{
+		
 	}
 	
 	private void buildShoppingList()
@@ -53,7 +58,16 @@ public class Chatbot
 	
 	private void buildQuestions()
 	{
-		
+		questions[0] = "Hello, how are you doing today?";
+		questions[1] = "What's the meaning of life?";
+		questions[2] = "What's your favorite meme?";
+		questions[3] = "";
+		questions[4] = "";
+		questions[5] = "";
+		questions[6] = "";
+		questions[7] = "";
+		questions[8] = "";
+		questions[9] = "What is your favorite song?";
 	}
 	
 	public String processConversation(String input)
@@ -148,6 +162,7 @@ public class Chatbot
 	
 	public String[] getVerbs()
 	{
+		
 		return verbs;
 	}
 
