@@ -9,6 +9,7 @@ import chat.controller.ChatbotController;
 import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
 
 public class ChatPanel extends JPanel
 {
@@ -18,6 +19,7 @@ public class ChatPanel extends JPanel
 	private JTextArea chatArea;
 	private SpringLayout appLayout;
 	private JButton checkerButton;
+	private JLabel infoLabel;
 	
 	
 public ChatPanel(ChatbotController appController)
@@ -35,11 +37,23 @@ public ChatPanel(ChatbotController appController)
 		}
 	});
 	
+	checkerButton.addActionListener(new ActionListener()
+	{
+		public void actionPerformed(ActionEvent click)
+		{
+			String userText = inputField.getText();
+			String displayText = appController.useCheckers(userText);
+			chatArea.append(displayText);
+			inputField.setText("");
+		}
+	});
+	
 	chatButton = new JButton("chat");
 	chatArea = new JTextArea(10, 25);
 	inputField = new JTextField(20);
 	appLayout = new SpringLayout();
 	checkerButton = new JButton("Call Checkers");
+	infoLabel = new JLabel("Type to chat with da Chatbot ;)");
 
 	setupPanel();
 	setupLayout();
@@ -53,6 +67,8 @@ this.setLayout(appLayout);
 this.add(chatButton);
 this.add(inputField);
 this.add(chatArea);
+this.add(infoLabel);
+this.add(checkerButton);
 chatArea.setEnabled(false);
 chatArea.setEditable(false);
 }

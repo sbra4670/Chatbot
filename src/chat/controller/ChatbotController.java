@@ -5,6 +5,12 @@ import chat.model.Chatbot;
 import chat.view.ChatFrame;
 import java.util.List;
 
+/**
+ * Manages the Chatbot application including the model and Frame of the View package
+ * @author Sebastian Bravo
+ * @version 21.11.17 Added Frame 1.3
+ */
+
 public class ChatbotController
 {
 	private PopupDisplay display;
@@ -60,4 +66,22 @@ public class ChatbotController
 		display.displayText("Goodbye");
 		System.exit(0);
 	}
+
+	public String useCheckers(String text)
+	{
+		String response = "";
+		
+		if(chatbot.contentChecker(text))
+		{
+			response += "This text matches the special content\n";
+		}
+		
+		if (chatbot.cuteAnimalMemeChecker(text))
+		{
+			response += "";
+			
+			return response;
+		}
+	}
+	
 }

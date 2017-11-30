@@ -43,9 +43,10 @@ public class Chatbot
 	
 	private void buildMoiveList()
 	{
-		
+	 movieList("StarWars", "Action", 1);
 	}
 	
+
 	private void buildShoppingList()
 	{
 		
@@ -87,6 +88,32 @@ public class Chatbot
 			}
 		}
 		return validLength;
+	}
+	
+	private String buildChatbotResponse()
+	{
+		if (random % 2 ==0)
+		{
+			random = (int) (Math.random() * movieList.size());
+			response += "\n" + movieList.get(random).getTitle() + "is a great movie!";
+		}
+		
+		int followup = (int)(Math.random() * 5);
+		
+		switch(followup)
+		{
+		case 0:
+			response += followUps[0] + "\n";
+		case 3: 
+			response += followUps[1] + "\n";
+		case 1:
+			response += followUps[2] + "\n";
+			
+		default:
+			response += followUps [4]; + "\n";
+			response += followUps [3] + "\n";
+			break;
+		}
 	}
 	
 	public boolean htmlTagChecker(String input)
